@@ -24,7 +24,7 @@ struct RootView: View {
             Button{
                 
             }label: {
-                Text("Begin Journey")
+                Text("Begin Adventure")
             }
             
             
