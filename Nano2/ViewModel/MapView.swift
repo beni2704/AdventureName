@@ -10,6 +10,8 @@ import SwiftUI
 import MapKit
 
 struct MapView: UIViewRepresentable {
+    let landmarks: [Landmark]
+    
     func makeUIView(context: Context) -> MKMapView {
         let map = MKMapView()
         map.showsUserLocation = true
@@ -20,8 +22,16 @@ struct MapView: UIViewRepresentable {
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
+
     
     func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<MapView>) {
         //
+        updateAnnotations(from: uiView)
+    }
+    
+    func updateAnnotations(from mapView: MKMapView) {
+        mapView.removeAnnotations(mapView.annotations)
+        let annotations = self.landmarks.map(LandmarkAnnotation.init)
+        mapView.addAnnotations(annotations)
     }
 }

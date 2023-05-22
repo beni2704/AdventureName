@@ -19,6 +19,11 @@
 		B1562C9D2A1680D300EE7CA5 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562C9C2A1680D300EE7CA5 /* Landmark.swift */; };
 		B1562C9F2A16817C00EE7CA5 /* MapQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562C9E2A16817C00EE7CA5 /* MapQuestView.swift */; };
 		B1562CA22A16839500EE7CA5 /* EnumTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CA12A16839500EE7CA5 /* EnumTabs.swift */; };
+		B1562CC52A1A8C3A00EE7CA5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CC42A1A8C3A00EE7CA5 /* HomeView.swift */; };
+		B1562CC72A1A8C5000EE7CA5 /* ResultLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CC62A1A8C5000EE7CA5 /* ResultLocationView.swift */; };
+		B1562CC92A1A970E00EE7CA5 /* LandmarkAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CC82A1A970E00EE7CA5 /* LandmarkAnnotation.swift */; };
+		B1562CCC2A1AAD8600EE7CA5 /* PlaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CCB2A1AAD8600EE7CA5 /* PlaceListView.swift */; };
+		B1562CCE2A1B21AC00EE7CA5 /* CustomAnnot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CCD2A1B21AC00EE7CA5 /* CustomAnnot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,12 @@
 		B1562C9C2A1680D300EE7CA5 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		B1562C9E2A16817C00EE7CA5 /* MapQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapQuestView.swift; sourceTree = "<group>"; };
 		B1562CA12A16839500EE7CA5 /* EnumTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumTabs.swift; sourceTree = "<group>"; };
+		B1562CC42A1A8C3A00EE7CA5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B1562CC62A1A8C5000EE7CA5 /* ResultLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLocationView.swift; sourceTree = "<group>"; };
+		B1562CC82A1A970E00EE7CA5 /* LandmarkAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkAnnotation.swift; sourceTree = "<group>"; };
+		B1562CCA2A1A9A2A00EE7CA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B1562CCB2A1AAD8600EE7CA5 /* PlaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListView.swift; sourceTree = "<group>"; };
+		B1562CCD2A1B21AC00EE7CA5 /* CustomAnnot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +80,7 @@
 		B1562C6D2A1473CB00EE7CA5 /* Nano2 */ = {
 			isa = PBXGroup;
 			children = (
+				B1562CCA2A1A9A2A00EE7CA5 /* Info.plist */,
 				B1562CA02A16837E00EE7CA5 /* Utilities */,
 				B1562C922A16788600EE7CA5 /* Model */,
 				B1562C932A16788B00EE7CA5 /* ViewModel */,
@@ -103,6 +115,9 @@
 			children = (
 				B1562C812A1474AE00EE7CA5 /* RootView.swift */,
 				B1562C9E2A16817C00EE7CA5 /* MapQuestView.swift */,
+				B1562CC42A1A8C3A00EE7CA5 /* HomeView.swift */,
+				B1562CC62A1A8C5000EE7CA5 /* ResultLocationView.swift */,
+				B1562CCB2A1AAD8600EE7CA5 /* PlaceListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				B1562C9C2A1680D300EE7CA5 /* Landmark.swift */,
+				B1562CC82A1A970E00EE7CA5 /* LandmarkAnnotation.swift */,
+				B1562CCD2A1B21AC00EE7CA5 /* CustomAnnot.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,10 +224,15 @@
 				B1562C902A16787C00EE7CA5 /* MapView.swift in Sources */,
 				B1562C952A1678FD00EE7CA5 /* Coordinator.swift in Sources */,
 				B1562C9D2A1680D300EE7CA5 /* Landmark.swift in Sources */,
+				B1562CCE2A1B21AC00EE7CA5 /* CustomAnnot.swift in Sources */,
+				B1562CCC2A1AAD8600EE7CA5 /* PlaceListView.swift in Sources */,
 				B1562CA22A16839500EE7CA5 /* EnumTabs.swift in Sources */,
+				B1562CC52A1A8C3A00EE7CA5 /* HomeView.swift in Sources */,
+				B1562CC72A1A8C5000EE7CA5 /* ResultLocationView.swift in Sources */,
 				B1562C782A1473CC00EE7CA5 /* Persistence.swift in Sources */,
 				B1562C6F2A1473CB00EE7CA5 /* Nano2App.swift in Sources */,
 				B1562C822A1474AE00EE7CA5 /* RootView.swift in Sources */,
+				B1562CC92A1A970E00EE7CA5 /* LandmarkAnnotation.swift in Sources */,
 				B1562C9B2A167A6A00EE7CA5 /* LocationManager.swift in Sources */,
 				B1562C9F2A16817C00EE7CA5 /* MapQuestView.swift in Sources */,
 			);
@@ -344,6 +366,7 @@
 				DEVELOPMENT_TEAM = 54STNG9K7F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Nano2/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location requires acces your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -375,6 +398,7 @@
 				DEVELOPMENT_TEAM = 54STNG9K7F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Nano2/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location requires acces your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

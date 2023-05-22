@@ -28,6 +28,5 @@ class Coordinator: NSObject, MKMapViewDelegate {
                 }
             }
         }
-        
     }
 }

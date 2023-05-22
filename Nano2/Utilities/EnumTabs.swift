@@ -9,8 +9,8 @@ import Foundation
 
 enum Tabs : Int{
     case home = 1
-    case showLandmark = 2
-    case QuestMap = 3
+    case showResultLocation = 2
+    case mapQuest = 3
     case uploadImage = 4
-    case QuestSuccess = 5
+    case questSuccess = 5
 }
