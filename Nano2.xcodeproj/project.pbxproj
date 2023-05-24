@@ -24,6 +24,13 @@
 		B1562CC92A1A970E00EE7CA5 /* LandmarkAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CC82A1A970E00EE7CA5 /* LandmarkAnnotation.swift */; };
 		B1562CCC2A1AAD8600EE7CA5 /* PlaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CCB2A1AAD8600EE7CA5 /* PlaceListView.swift */; };
 		B1562CCE2A1B21AC00EE7CA5 /* CustomAnnot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CCD2A1B21AC00EE7CA5 /* CustomAnnot.swift */; };
+		B1562CD02A1BE7A800EE7CA5 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CCF2A1BE7A800EE7CA5 /* ColorExtension.swift */; };
+		B1562CD22A1C046700EE7CA5 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CD12A1C046700EE7CA5 /* LocationViewModel.swift */; };
+		B1562CD42A1D30CD00EE7CA5 /* UploadQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CD32A1D30CD00EE7CA5 /* UploadQuest.swift */; };
+		B1562CD62A1D30D500EE7CA5 /* CompleteQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CD52A1D30D500EE7CA5 /* CompleteQuest.swift */; };
+		B1562CDA2A1D357600EE7CA5 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CD92A1D357600EE7CA5 /* ButtonComponent.swift */; };
+		B1562CDC2A1DF9B700EE7CA5 /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CDB2A1DF9B700EE7CA5 /* TempView.swift */; };
+		B1FAC0D12A1E5E070011BCFF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FAC0D02A1E5E070011BCFF /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +54,13 @@
 		B1562CCA2A1A9A2A00EE7CA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B1562CCB2A1AAD8600EE7CA5 /* PlaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListView.swift; sourceTree = "<group>"; };
 		B1562CCD2A1B21AC00EE7CA5 /* CustomAnnot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnot.swift; sourceTree = "<group>"; };
+		B1562CCF2A1BE7A800EE7CA5 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		B1562CD12A1C046700EE7CA5 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		B1562CD32A1D30CD00EE7CA5 /* UploadQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadQuest.swift; sourceTree = "<group>"; };
+		B1562CD52A1D30D500EE7CA5 /* CompleteQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteQuest.swift; sourceTree = "<group>"; };
+		B1562CD92A1D357600EE7CA5 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
+		B1562CDB2A1DF9B700EE7CA5 /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
+		B1FAC0D02A1E5E070011BCFF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +128,15 @@
 			isa = PBXGroup;
 			children = (
 				B1562C812A1474AE00EE7CA5 /* RootView.swift */,
-				B1562C9E2A16817C00EE7CA5 /* MapQuestView.swift */,
 				B1562CC42A1A8C3A00EE7CA5 /* HomeView.swift */,
 				B1562CC62A1A8C5000EE7CA5 /* ResultLocationView.swift */,
+				B1562C9E2A16817C00EE7CA5 /* MapQuestView.swift */,
 				B1562CCB2A1AAD8600EE7CA5 /* PlaceListView.swift */,
+				B1562CD32A1D30CD00EE7CA5 /* UploadQuest.swift */,
+				B1562CD52A1D30D500EE7CA5 /* CompleteQuest.swift */,
+				B1562CD92A1D357600EE7CA5 /* ButtonComponent.swift */,
+				B1562CDB2A1DF9B700EE7CA5 /* TempView.swift */,
+				B1FAC0D02A1E5E070011BCFF /* ImagePicker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -138,6 +157,7 @@
 				B1562C8F2A16787C00EE7CA5 /* MapView.swift */,
 				B1562C942A1678FD00EE7CA5 /* Coordinator.swift */,
 				B1562C9A2A167A6A00EE7CA5 /* LocationManager.swift */,
+				B1562CD12A1C046700EE7CA5 /* LocationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -146,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				B1562CA12A16839500EE7CA5 /* EnumTabs.swift */,
+				B1562CCF2A1BE7A800EE7CA5 /* ColorExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -220,19 +241,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1562CDC2A1DF9B700EE7CA5 /* TempView.swift in Sources */,
 				B1562C7B2A1473CC00EE7CA5 /* Nano2.xcdatamodeld in Sources */,
 				B1562C902A16787C00EE7CA5 /* MapView.swift in Sources */,
 				B1562C952A1678FD00EE7CA5 /* Coordinator.swift in Sources */,
 				B1562C9D2A1680D300EE7CA5 /* Landmark.swift in Sources */,
 				B1562CCE2A1B21AC00EE7CA5 /* CustomAnnot.swift in Sources */,
 				B1562CCC2A1AAD8600EE7CA5 /* PlaceListView.swift in Sources */,
+				B1FAC0D12A1E5E070011BCFF /* ImagePicker.swift in Sources */,
 				B1562CA22A16839500EE7CA5 /* EnumTabs.swift in Sources */,
 				B1562CC52A1A8C3A00EE7CA5 /* HomeView.swift in Sources */,
+				B1562CD22A1C046700EE7CA5 /* LocationViewModel.swift in Sources */,
+				B1562CD42A1D30CD00EE7CA5 /* UploadQuest.swift in Sources */,
 				B1562CC72A1A8C5000EE7CA5 /* ResultLocationView.swift in Sources */,
+				B1562CDA2A1D357600EE7CA5 /* ButtonComponent.swift in Sources */,
 				B1562C782A1473CC00EE7CA5 /* Persistence.swift in Sources */,
 				B1562C6F2A1473CB00EE7CA5 /* Nano2App.swift in Sources */,
+				B1562CD02A1BE7A800EE7CA5 /* ColorExtension.swift in Sources */,
 				B1562C822A1474AE00EE7CA5 /* RootView.swift in Sources */,
 				B1562CC92A1A970E00EE7CA5 /* LandmarkAnnotation.swift in Sources */,
+				B1562CD62A1D30D500EE7CA5 /* CompleteQuest.swift in Sources */,
 				B1562C9B2A167A6A00EE7CA5 /* LocationManager.swift in Sources */,
 				B1562C9F2A16817C00EE7CA5 /* MapQuestView.swift in Sources */,
 			);
@@ -367,19 +395,21 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nano2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = bismillah;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location requires acces your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.beni.Nano2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beni.QuestMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -399,19 +429,21 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nano2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = bismillah;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location requires acces your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.beni.Nano2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beni.QuestMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

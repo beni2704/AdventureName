@@ -11,11 +11,13 @@ import SwiftUI
 struct Nano2App: App {
     let persistenceController = PersistenceController.shared
     @StateObject var locationManager = LocationManager()
+    @StateObject var locationVM = LocationViewModel()
     
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environmentObject(LocationManager())
+                .environmentObject(LocationViewModel())
         }
     }
 }
