@@ -9,7 +9,10 @@ import SwiftUI
 import Photos
 
 struct UploadQuest: View {
+    
+    @FetchRequest(sortDescriptors: []) var landmarkList: FetchedResults<LandmarkEntity>
     @EnvironmentObject var locationVM: LocationViewModel
+    
     @Environment(\.dismiss) var dismiss
     @Binding var tabs: Tabs
     @State var showImage = false
@@ -24,37 +27,6 @@ struct UploadQuest: View {
     
     var body: some View {
         VStack(alignment: .leading){
-//            HStack{
-//                Button{
-//                    tabs = .mapQuest
-//                }label: {
-//                    Image(systemName: "chevron.backward")
-//                        .resizable()
-//                        .frame(width: 15,height: 25)
-//                        .padding(.top)
-//                        .padding(.horizontal)
-//                        .foregroundColor(Color.primary_white)
-//                }
-//                Spacer()
-//                Text("Complete Quest")
-//                    .font(.title)
-//                    .padding(.top)
-//                    .padding(.horizontal)
-//                Spacer()
-//                Button{
-//
-//                }label: {
-//                    Image(systemName: "chevron.backward")
-//                        .resizable()
-//                        .frame(width: 15,height: 25)
-//                        .padding(.top)
-//                        .padding(.horizontal)
-//                        .foregroundColor(Color.primary_white)
-//                }
-//                .hidden()
-//            }
-//            .background(Color.primary_black)
-            
             Rectangle()
                 .foregroundColor(.white)
                 .frame(height: 3)
@@ -113,7 +85,7 @@ struct UploadQuest: View {
                 
                 Button{
                     let fixedPhoto = fixOrientation(img: selectedImage)
-                    if locationVM.landmarkPlace.isEmpty{
+                    if landmarkList.isEmpty{
                         print("empty")
                     }else {
                         locationVM.addPhoto(landmark: currentLandmark, photo: fixedPhoto.pngData()!)
@@ -121,9 +93,9 @@ struct UploadQuest: View {
                     }
                     savePhotoToLibrary(fixedPhoto)
                     
-                    var totalLandmark = locationVM.landmarkPlace.count
+                    var totalLandmark = landmarkList.count
                     
-                    for landmark in locationVM.landmarkPlace {
+                    for landmark in landmarkList {
                         if landmark.image != nil {
                             totalLandmark -= 1
                         }
@@ -138,18 +110,31 @@ struct UploadQuest: View {
                 }label: {
                     ButtonComponent(text: "Upload", isDisabled: selectedImage == UIImage())
                 }
-                .onAppear(){
-                    locationVM.fetchLandmark()
-                }
                 .disabled(selectedImage == UIImage())
             }
             .padding(.horizontal)
-            
-            
-            
             Spacer()
         }
-        .navigationTitle("Complete your Quest")
+//        .navigationTitle("Upload Image Quest")
+        .navigationBarBackButtonHidden(true)
+        .toolbar(){
+            ToolbarItem(placement: .navigationBarLeading){
+                Button{
+                    dismiss()
+                }label: {
+                    Image(systemName: "chevron.backward")
+                        .resizable()
+                        .frame(width: 15,height: 25)
+                        .padding(.vertical)
+                        .foregroundColor(Color.primary_white)
+                }
+            }
+            ToolbarItem(placement: .principal){
+                Text("Complete Quest")
+                    .font(.title)
+                    .padding(.vertical)
+            }
+        }
     }
     private func fixOrientation(img: UIImage) -> UIImage {
         if (img.imageOrientation == .up) {
@@ -186,9 +171,9 @@ struct UploadQuest: View {
     }
 }
 
-//struct UploadQuest_Previews: PreviewProvider {
-//    static var previews: some View {
-//        UploadQuest(tabs: .constant(.mapQuest), namePlace: "Starbucks Coffee", titlePlace: "Multimedia Nusantara University, Tangerang, Banten, Indonesia", currentLandmark: LocationViewModel().landmarkPlace.first!)
-//            .environmentObject(LocationViewModel())
-//    }
-//}
+struct UploadQuest_Previews: PreviewProvider {
+    static var previews: some View {
+        UploadQuest(tabs: .constant(.mapQuest), namePlace: "Starbucks Coffee", titlePlace: "Multimedia Nusantara University, Tangerang, Banten, Indonesia", currentLandmark: LandmarkEntity())
+            .environmentObject(LocationViewModel())
+    }
+}

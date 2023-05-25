@@ -14,7 +14,6 @@
 		B1562C7B2A1473CC00EE7CA5 /* Nano2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1562C792A1473CC00EE7CA5 /* Nano2.xcdatamodeld */; };
 		B1562C822A1474AE00EE7CA5 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562C812A1474AE00EE7CA5 /* RootView.swift */; };
 		B1562C902A16787C00EE7CA5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562C8F2A16787C00EE7CA5 /* MapView.swift */; };
-		B1562C952A1678FD00EE7CA5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562C942A1678FD00EE7CA5 /* Coordinator.swift */; };
 		B1562C9B2A167A6A00EE7CA5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562C9A2A167A6A00EE7CA5 /* LocationManager.swift */; };
 		B1562C9D2A1680D300EE7CA5 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562C9C2A1680D300EE7CA5 /* Landmark.swift */; };
 		B1562C9F2A16817C00EE7CA5 /* MapQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562C9E2A16817C00EE7CA5 /* MapQuestView.swift */; };
@@ -31,6 +30,7 @@
 		B1562CDA2A1D357600EE7CA5 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CD92A1D357600EE7CA5 /* ButtonComponent.swift */; };
 		B1562CDC2A1DF9B700EE7CA5 /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CDB2A1DF9B700EE7CA5 /* TempView.swift */; };
 		B1FAC0D12A1E5E070011BCFF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FAC0D02A1E5E070011BCFF /* ImagePicker.swift */; };
+		B1FAC0D32A1F4F490011BCFF /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FAC0D22A1F4F490011BCFF /* ImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,6 @@
 		B1562C812A1474AE00EE7CA5 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		B1562C862A16652600EE7CA5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B1562C8F2A16787C00EE7CA5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		B1562C942A1678FD00EE7CA5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B1562C9A2A167A6A00EE7CA5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B1562C9C2A1680D300EE7CA5 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		B1562C9E2A16817C00EE7CA5 /* MapQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapQuestView.swift; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		B1562CD92A1D357600EE7CA5 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		B1562CDB2A1DF9B700EE7CA5 /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
 		B1FAC0D02A1E5E070011BCFF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		B1FAC0D22A1F4F490011BCFF /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				B1562C8F2A16787C00EE7CA5 /* MapView.swift */,
-				B1562C942A1678FD00EE7CA5 /* Coordinator.swift */,
 				B1562C9A2A167A6A00EE7CA5 /* LocationManager.swift */,
 				B1562CD12A1C046700EE7CA5 /* LocationViewModel.swift */,
 			);
@@ -167,6 +166,7 @@
 			children = (
 				B1562CA12A16839500EE7CA5 /* EnumTabs.swift */,
 				B1562CCF2A1BE7A800EE7CA5 /* ColorExtension.swift */,
+				B1FAC0D22A1F4F490011BCFF /* ImageExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -244,13 +244,13 @@
 				B1562CDC2A1DF9B700EE7CA5 /* TempView.swift in Sources */,
 				B1562C7B2A1473CC00EE7CA5 /* Nano2.xcdatamodeld in Sources */,
 				B1562C902A16787C00EE7CA5 /* MapView.swift in Sources */,
-				B1562C952A1678FD00EE7CA5 /* Coordinator.swift in Sources */,
 				B1562C9D2A1680D300EE7CA5 /* Landmark.swift in Sources */,
 				B1562CCE2A1B21AC00EE7CA5 /* CustomAnnot.swift in Sources */,
 				B1562CCC2A1AAD8600EE7CA5 /* PlaceListView.swift in Sources */,
 				B1FAC0D12A1E5E070011BCFF /* ImagePicker.swift in Sources */,
 				B1562CA22A16839500EE7CA5 /* EnumTabs.swift in Sources */,
 				B1562CC52A1A8C3A00EE7CA5 /* HomeView.swift in Sources */,
+				B1FAC0D32A1F4F490011BCFF /* ImageExtension.swift in Sources */,
 				B1562CD22A1C046700EE7CA5 /* LocationViewModel.swift in Sources */,
 				B1562CD42A1D30CD00EE7CA5 /* UploadQuest.swift in Sources */,
 				B1562CC72A1A8C5000EE7CA5 /* ResultLocationView.swift in Sources */,
@@ -396,6 +396,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nano2/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = bismillah;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This application need access to your camera access";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This application need always access your locatin";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location requires acces your location";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This application need access to your library";
@@ -432,6 +433,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nano2/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = bismillah;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This application need access to your camera access";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This application need always access your locatin";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location requires acces your location";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This application need access to your library";

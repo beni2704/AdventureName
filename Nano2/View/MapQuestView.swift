@@ -10,10 +10,11 @@ import SwiftUI
 struct MapQuestView: View {
     @Binding var tabs: Tabs
     @EnvironmentObject var locationVM: LocationViewModel
+    @FetchRequest(sortDescriptors: []) var landmarkList: FetchedResults<LandmarkEntity>
     @State var tapped: Bool = false
     
     func calculateOffset() -> CGFloat {
-        if self.locationVM.landmarkPlace.count > 0 && !self.tapped {
+        if self.landmarkList.count > 0 && !self.tapped {
             return UIScreen.main.bounds.size.height - UIScreen.main.bounds.size.height / 4
         }
         else if self.tapped {
@@ -26,36 +27,36 @@ struct MapQuestView: View {
     var body: some View {
         NavigationView(){
             ZStack(alignment: .top){
-//                HStack{
-//                    Button{
-//                        tabs = .home
-//                    }label: {
-//                        Image(systemName: "chevron.backward")
-//                            .resizable()
-//                            .frame(width: 15,height: 25)
-//                            .padding()
-//                            .foregroundColor(Color.primary_white)
-//                    }
-//                    Spacer()
-//                    Text("Quest Journey")
-//                        .font(.title)
-//                    Spacer()
-//                    Button{
-//
-//                    }label: {
-//                        Image(systemName: "chevron.backward")
-//                            .resizable()
-//                            .frame(width: 15,height: 25)
-//                            .padding()
-//                            .foregroundColor(Color.primary_white)
-//                    }
-//                    .hidden()
-//                }
-//                .background(Color.primary_black)
-//                .zIndex(1)
-                
-                
-                MapView()
+                VStack{
+                    HStack{
+                        Button{
+                            tabs = .home
+                        }label: {
+                            Image(systemName: "chevron.backward")
+                                .resizable()
+                                .frame(width: 15,height: 25)
+                                .padding(.horizontal)
+                                .foregroundColor(Color.primary_white)
+                        }
+                        Spacer()
+                        Text("Quest Journey")
+                            .font(.title)
+                        Spacer()
+                        Button{
+                            
+                        }label: {
+                            Image(systemName: "chevron.backward")
+                                .resizable()
+                                .frame(width: 15,height: 25)
+                                .padding(.horizontal)
+                                .foregroundColor(Color.primary_white)
+                        }
+                        .hidden()
+                    }
+                    .background(Color.primary_black)
+                    .zIndex(1)
+                    MapView()
+                }
                 
                 PlaceListView(tabs: $tabs){
                     self.tapped.toggle()
@@ -65,6 +66,7 @@ struct MapQuestView: View {
                 .offset(y: calculateOffset())
             }
         }
+
     }
 }
 

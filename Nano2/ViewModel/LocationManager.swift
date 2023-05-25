@@ -7,9 +7,10 @@
 
 import Foundation
 import MapKit
+import CoreData
 
 class LocationManager: NSObject, ObservableObject {
-
+    
     private let locationManager = CLLocationManager()
     @Published var location: CLLocation? = nil
 
@@ -27,15 +28,16 @@ class LocationManager: NSObject, ObservableObject {
 extension LocationManager: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        print(status)
+//        print(status)
+        
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {
             return
         }
-
         self.location = location
+//        print("location: \(location)")
     }
 
 }

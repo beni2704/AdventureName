@@ -16,6 +16,7 @@ struct Nano2App: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(LocationManager())
                 .environmentObject(LocationViewModel())
         }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PlaceListView: View {
+    @FetchRequest(sortDescriptors: []) var landmarkList: FetchedResults<LandmarkEntity>
     @EnvironmentObject var locationVM: LocationViewModel
     @Binding var tabs: Tabs
     var onTap: () -> ()
@@ -37,11 +38,11 @@ struct PlaceListView: View {
             )
             
             VStack(alignment: .leading, spacing: 10) {
-                if !locationVM.landmarkPlace.isEmpty {
-                    ForEach(Array(locationVM.landmarkPlace.enumerated()), id: \.element) { index, landmark in
+                if !landmarkList.isEmpty {
+                    ForEach(Array(landmarkList.enumerated()), id: \.element) { index, landmark in
                         
                         NavigationLink{
-                            //                                                                tabs = .uploadImage
+                            // tabs = .uploadImage
                             UploadQuest(tabs: $tabs, namePlace: landmark.name!, titlePlace: landmark.title!, currentLandmark: landmark)
                         }label: {
                             VStack(alignment: .leading){
@@ -57,9 +58,6 @@ struct PlaceListView: View {
                             .padding()
                             .background(landmark.visited ? Color.primary_green : Color.primary_black)
                             .cornerRadius(12)
-                        }
-                        .onAppear(){
-                            locationVM.fetchLandmark()
                         }
                     }
                 }

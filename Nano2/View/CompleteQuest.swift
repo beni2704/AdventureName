@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CompleteQuest: View {
+    @FetchRequest(sortDescriptors: []) var landmarkList: FetchedResults<LandmarkEntity>
     @EnvironmentObject var locationVM: LocationViewModel
     @Binding var tabs: Tabs
     
@@ -23,8 +24,8 @@ struct CompleteQuest: View {
                 HStack{
                     VStack(alignment: .leading){
                         //rep
-                        if !(locationVM.landmarkPlace.isEmpty) {
-                            ForEach(Array(locationVM.landmarkPlace.enumerated()), id: \.element) { (index, landmark) in
+                        if !(landmarkList.isEmpty) {
+                            ForEach(Array(landmarkList.enumerated()), id: \.element) { (index, landmark) in
                                 Text("\(index + 1). \(landmark.name!)")
                                     .font(.title2)
                                 if landmark.image == nil {
