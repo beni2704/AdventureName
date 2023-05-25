@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ButtonComponent: View {
     var text: String
+    var isDisabled: Bool
     var body: some View {
         HStack{
             Spacer()
@@ -17,7 +18,7 @@ struct ButtonComponent: View {
             Spacer()
         }
         .frame(height: 40)
-        .background(Color.primary_green)
+        .background(isDisabled ? Color.gray :  Color.primary_green)
         .cornerRadius(17)
         .foregroundColor(Color.white)
     }
@@ -25,6 +26,6 @@ struct ButtonComponent: View {
 
 struct ButtonComponent_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonComponent(text: "Confirm")
+        ButtonComponent(text: "Confirm",isDisabled: true)
     }
 }

@@ -12,38 +12,9 @@ import CoreLocation
 struct HomeView: View {
     @State var inputName : String = ""
     @Binding var tabs: Tabs
-    @EnvironmentObject var locationManager: LocationManager
-    @EnvironmentObject var locationVM: LocationViewModel
+    @Binding var keyword: String
     
-    func getNearByLandmarks() {
-        let request = MKLocalSearch.Request()
-        request.naturalLanguageQuery = inputName
-        let center = locationManager.location
-        request.region = MKCoordinateRegion(center: center!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
-
-        let search = MKLocalSearch(request: request)
-        search.start { (response, error) in
-            if let response = response {
-                let mapItems = response.mapItems
-                let sortedMapItems = mapItems.sorted {
-                    let location1 = $0.placemark.location
-                    let location2 = $1.placemark.location
-                    let distance1 = center?.distance(from: location1!)
-                    let distance2 = center?.distance(from: location2!)
-                    return distance1 ?? 0 < distance2 ?? 0
-                }
-                
-                let nearestMapItems = Array(sortedMapItems.prefix(4))
-                
-                for nearestMapItem in nearestMapItems {
-                    locationVM.addLandmark(name: nearestMapItem.placemark.name!, title: nearestMapItem.placemark.title!, long: nearestMapItem.placemark.coordinate.longitude, lat: nearestMapItem.placemark.coordinate.latitude)
-                }
-                
-                
-            }
-        }
-
-    }
+    @EnvironmentObject var locationVM: LocationViewModel
     
     var body: some View {
         VStack{
@@ -64,7 +35,7 @@ struct HomeView: View {
             
             Button{
                 locationVM.deleteLandmark()
-                getNearByLandmarks()
+                keyword = inputName
                 tabs = .showResultLocation
             }label: {
                 Text("Begin Adventure")
@@ -75,8 +46,8 @@ struct HomeView: View {
             }
             
             Button{
-                locationVM.fetchLandmark()
                 tabs = .mapQuest
+                locationVM.fetchLandmark()
             }label: {
                 Text("Continue Journey")
                     .frame(width: 200, height: 40)
@@ -91,6 +62,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(tabs: .constant(.home))
+        HomeView(tabs: .constant(.home),keyword: .constant(""))
     }
 }

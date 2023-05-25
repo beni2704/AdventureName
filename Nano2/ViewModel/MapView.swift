@@ -22,27 +22,76 @@ struct MapView: UIViewRepresentable {
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-
+    
     
     func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<MapView>) {
         //
         updateAnnotations(from: uiView)
+        
+//        uiView.showsUserLocation = true
+        uiView.showsCompass = true
+        
+        if let userTrackingButton = uiView.subviews.first(where: { $0 is MKUserTrackingButton }) as? MKUserTrackingButton {
+            userTrackingButton.frame = CGRect(origin: CGPoint(x: 16, y: 16), size: CGSize(width: 30, height: 30))
+        } else {
+            let userTrackingButton = MKUserTrackingButton(mapView: uiView)
+            userTrackingButton.frame = CGRect(origin: CGPoint(x: 16, y: 16), size: CGSize(width: 30, height: 30))
+            userTrackingButton.backgroundColor = UIColor.white
+//            userTrackingButton.layer.borderColor = UIColor.white
+//            userTrackingButton.layer.borderWidth = 2
+            userTrackingButton.layer.cornerRadius = 10
+            userTrackingButton.layer.opacity = 0.8
+            uiView.addSubview(userTrackingButton)
+        }
     }
     
     func updateAnnotations(from mapView: MKMapView) {
         mapView.removeAnnotations(mapView.annotations)
-//        let annotations = self.landmarks.map(LandmarkAnnotation.init)
-        var annotations: [LandmarkAnnotation] = []
-//        ForEach(self.locationVM.landmarkPlace){ landmark in
-//            annotations.append(LandmarkAnnotation(name: landmark.name!, lat: landmark.lat, long: landmark.long))
-//        }
+        var annotations: [CustomAnnotation] = []
         if !locationVM.landmarkPlace.isEmpty{
-            annotations.append(LandmarkAnnotation(name: locationVM.landmarkPlace[0].name!, lat: locationVM.landmarkPlace[0].lat, long: locationVM.landmarkPlace[0].long))
-            annotations.append(LandmarkAnnotation(name: locationVM.landmarkPlace[1].name!, lat: locationVM.landmarkPlace[1].lat, long: locationVM.landmarkPlace[1].long))
-            annotations.append(LandmarkAnnotation(name: locationVM.landmarkPlace[2].name!, lat: locationVM.landmarkPlace[2].lat, long: locationVM.landmarkPlace[2].long))
-            annotations.append(LandmarkAnnotation(name: locationVM.landmarkPlace[3].name!, lat: locationVM.landmarkPlace[3].lat, long: locationVM.landmarkPlace[3].long))
+            for landmark in locationVM.landmarkPlace {
+                //                annotations.append(LandmarkAnnotation(name: landmark.name!, lat: landmark.lat, long: landmark.long))
+                let annotation = CustomAnnotation(name: landmark.name!, lat: landmark.lat, long: landmark.long)
+                annotations.append(annotation)
+            }
         }
         
         mapView.addAnnotations(annotations)
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is CustomAnnotation else { return nil }
+        
+        let identifier = "CustomAnnotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        // Set custom image for the annotation
+        let imageView = UIImageView(image: UIImage(systemName: "photo.artframe"))
+        imageView.frame = CGRect(x: 0, y: 0, width: 50, height: 50) // Set the desired image size
+        
+        // Customize the image view (e.g., add border, corner radius, etc.)
+        // ...
+        
+        // Set the custom image view as the left accessory view of the annotation view
+        annotationView?.leftCalloutAccessoryView = imageView
+        
+        return annotationView
+    }
 }
+
+
+
+
+
+
+
+
+
+

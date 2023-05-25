@@ -8,10 +8,13 @@
 import CoreData
 import Foundation
 import SwiftUI
+import MapKit
 
 class LocationViewModel: ObservableObject{
     let manager = PersistenceController.shared
+    
     @Published var landmarkPlace: [LandmarkEntity] = []
+//    @Published var landmarkPlace2: [LandmarkEntity2] = []
     
     func fetchLandmark(){
         let request = NSFetchRequest<LandmarkEntity>(entityName: "LandmarkEntity")
@@ -45,14 +48,30 @@ class LocationViewModel: ObservableObject{
     
     func addLandmark(name: String, title: String, long: Double, lat: Double){
         let newLandmark = LandmarkEntity(context: manager.container.viewContext)
+        newLandmark.landmarkId = UUID()
         newLandmark.name = name
         newLandmark.title = title
         newLandmark.visited = false
         newLandmark.long = long
         newLandmark.lat = lat
-        save()
+        //save()
         landmarkPlace.append(newLandmark)
     }
+    
+//    func addLandmarks(_ items: [MKMapItem]){
+//        landmarkPlace2 = items.map({ mapitem in
+//            var newLandmark = LandmarkEntity2(
+//                lat: mapitem.placemark.coordinate.latitude,
+//                long: mapitem.placemark.coordinate.longitude,
+//                visited: false)
+//            newLandmark.landmarkId = UUID()
+//            newLandmark.name = mapitem.name
+//            newLandmark.title = mapitem.placemark.title
+//            newLandmark.visited = false
+//            return newLandmark
+//        })
+//    }
+    
     
     func save(){
         withAnimation(Animation.default) {
@@ -64,4 +83,24 @@ class LocationViewModel: ObservableObject{
             }
         }
     }
+    
+    func addPhoto(landmark: LandmarkEntity, photo: Data){
+        let newPhoto = landmark
+        newPhoto.image = photo
+        newPhoto.visited = true
+        save()
+    }
 }
+
+//struct LandmarkEntity2: Identifiable{
+//    var id: UUID {
+//        return landmarkId!
+//    }
+//    var image: Data?
+//    var landmarkId: UUID?
+//    var lat: Double
+//    var long: Double
+//    var name: String?
+//    var title: String?
+//    var visited: Bool
+//}

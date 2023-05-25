@@ -396,7 +396,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nano2/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = bismillah;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This application need always access your locatin";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location requires acces your location";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This application need access to your library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -430,7 +432,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nano2/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = bismillah;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This application need always access your locatin";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location requires acces your location";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This application need access to your library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

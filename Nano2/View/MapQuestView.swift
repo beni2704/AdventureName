@@ -24,44 +24,46 @@ struct MapQuestView: View {
     }
     
     var body: some View {
-        ZStack(alignment: .top){
-            HStack{
-                Button{
-                    tabs = .home
-                }label: {
-                    Image(systemName: "chevron.backward")
-                        .resizable()
-                        .frame(width: 15,height: 25)
-                        .padding()
-                        .foregroundColor(Color.primary_white)
+        NavigationView(){
+            ZStack(alignment: .top){
+//                HStack{
+//                    Button{
+//                        tabs = .home
+//                    }label: {
+//                        Image(systemName: "chevron.backward")
+//                            .resizable()
+//                            .frame(width: 15,height: 25)
+//                            .padding()
+//                            .foregroundColor(Color.primary_white)
+//                    }
+//                    Spacer()
+//                    Text("Quest Journey")
+//                        .font(.title)
+//                    Spacer()
+//                    Button{
+//
+//                    }label: {
+//                        Image(systemName: "chevron.backward")
+//                            .resizable()
+//                            .frame(width: 15,height: 25)
+//                            .padding()
+//                            .foregroundColor(Color.primary_white)
+//                    }
+//                    .hidden()
+//                }
+//                .background(Color.primary_black)
+//                .zIndex(1)
+                
+                
+                MapView()
+                
+                PlaceListView(tabs: $tabs){
+                    self.tapped.toggle()
                 }
-                Spacer()
-                Text("Quest Journey")
-                    .font(.title)
-                Spacer()
-                Button{
-                    
-                }label: {
-                    Image(systemName: "chevron.backward")
-                        .resizable()
-                        .frame(width: 15,height: 25)
-                        .padding()
-                        .foregroundColor(Color.primary_white)
-                }
-                .hidden()
+                .animation(.spring())
+                .background(Color.primary_black)
+                .offset(y: calculateOffset())
             }
-            .background(Color.primary_black)
-            .zIndex(1)
-            
-            
-            MapView()
-            
-            PlaceListView(){
-                self.tapped.toggle()
-            }
-            .animation(.spring())
-            .background(Color.primary_black)
-            .offset(y: calculateOffset())
         }
     }
 }

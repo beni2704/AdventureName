@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlaceListView: View {
     @EnvironmentObject var locationVM: LocationViewModel
+    @Binding var tabs: Tabs
     var onTap: () -> ()
     
     var body: some View {
@@ -36,59 +37,45 @@ struct PlaceListView: View {
             )
             
             VStack(alignment: .leading, spacing: 10) {
-//                ForEach(self.landmarks, id: \.id) { landmark in
-//                    VStack(alignment: .leading) {
-//                        Text(landmark.name)
-//                            .fontWeight(.bold)
-//                        Text(landmark.title)
-//                    }
-//                }
                 if !locationVM.landmarkPlace.isEmpty {
-                    VStack(alignment: .leading){
-                        Text("\(locationVM.landmarkPlace[0].name!)")
-                            .font(.title2)
-                        Text("\(locationVM.landmarkPlace[0].title!)")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                        Divider()
-                    }
-                    VStack(alignment: .leading){
-                        Text("\(locationVM.landmarkPlace[1].name!)")
-                            .font(.title2)
-                        Text("\(locationVM.landmarkPlace[1].title!)")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                        Divider()
-                    }
-                    VStack(alignment: .leading){
-                        Text("\(locationVM.landmarkPlace[2].name!)")
-                            .font(.title2)
-                        Text("\(locationVM.landmarkPlace[2].title!)")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                        Divider()
-                    }
-                    VStack(alignment: .leading){
-                        Text("\(locationVM.landmarkPlace[3].name!)")
-                            .font(.title2)
-                        Text("\(locationVM.landmarkPlace[3].title!)")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                        Divider()
+                    ForEach(Array(locationVM.landmarkPlace.enumerated()), id: \.element) { index, landmark in
+                        
+                        NavigationLink{
+                            //                                                                tabs = .uploadImage
+                            UploadQuest(tabs: $tabs, namePlace: landmark.name!, titlePlace: landmark.title!, currentLandmark: landmark)
+                        }label: {
+                            VStack(alignment: .leading){
+                                Text("\(landmark.name!)")
+                                    .font(.title2)
+                                    .foregroundColor(.white)
+                                    .fontWeight(.bold)
+                                Text("\(landmark.title!)")
+                                    .font(.subheadline)
+                                    .foregroundColor(Color(UIColor.lightGray))
+                                Divider()
+                            }
+                            .padding()
+                            .background(landmark.visited ? Color.primary_green : Color.primary_black)
+                            .cornerRadius(12)
+                        }
+                        .onAppear(){
+                            locationVM.fetchLandmark()
+                        }
                     }
                 }
                 Spacer()
             }
-            .padding(.horizontal)
+            .padding(.horizontal,8)
             
         }
         .cornerRadius(10)
     }
+    
 }
 
 struct PlaceListView_Previews: PreviewProvider {
     static var previews: some View {
-        PlaceListView(onTap: {})
+        PlaceListView(tabs: .constant(.mapQuest), onTap: {})
             .environmentObject(LocationViewModel())
     }
 }

@@ -8,11 +8,15 @@
 import Foundation
 import MapKit
 
-class CustomAnnot: NSObject, MKAnnotation {
+class CustomAnnotation: NSObject, MKAnnotation {
     let coordinate: CLLocationCoordinate2D
     
-    init(coordinate: CLLocationCoordinate2D) {
-        self.coordinate = coordinate
+    let title: String?
+        
+    init(name: String, lat: Double, long: Double) {
+        self.title = name
+        self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        
         super.init()
     }
 }
