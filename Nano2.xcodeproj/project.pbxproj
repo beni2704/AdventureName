@@ -15,12 +15,10 @@
 		B1562C822A1474AE00EE7CA5 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562C812A1474AE00EE7CA5 /* RootView.swift */; };
 		B1562C902A16787C00EE7CA5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562C8F2A16787C00EE7CA5 /* MapView.swift */; };
 		B1562C9B2A167A6A00EE7CA5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562C9A2A167A6A00EE7CA5 /* LocationManager.swift */; };
-		B1562C9D2A1680D300EE7CA5 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562C9C2A1680D300EE7CA5 /* Landmark.swift */; };
 		B1562C9F2A16817C00EE7CA5 /* MapQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562C9E2A16817C00EE7CA5 /* MapQuestView.swift */; };
 		B1562CA22A16839500EE7CA5 /* EnumTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CA12A16839500EE7CA5 /* EnumTabs.swift */; };
 		B1562CC52A1A8C3A00EE7CA5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CC42A1A8C3A00EE7CA5 /* HomeView.swift */; };
 		B1562CC72A1A8C5000EE7CA5 /* ResultLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CC62A1A8C5000EE7CA5 /* ResultLocationView.swift */; };
-		B1562CC92A1A970E00EE7CA5 /* LandmarkAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CC82A1A970E00EE7CA5 /* LandmarkAnnotation.swift */; };
 		B1562CCC2A1AAD8600EE7CA5 /* PlaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CCB2A1AAD8600EE7CA5 /* PlaceListView.swift */; };
 		B1562CCE2A1B21AC00EE7CA5 /* CustomAnnot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CCD2A1B21AC00EE7CA5 /* CustomAnnot.swift */; };
 		B1562CD02A1BE7A800EE7CA5 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1562CCF2A1BE7A800EE7CA5 /* ColorExtension.swift */; };
@@ -44,12 +42,10 @@
 		B1562C862A16652600EE7CA5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B1562C8F2A16787C00EE7CA5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B1562C9A2A167A6A00EE7CA5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		B1562C9C2A1680D300EE7CA5 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		B1562C9E2A16817C00EE7CA5 /* MapQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapQuestView.swift; sourceTree = "<group>"; };
 		B1562CA12A16839500EE7CA5 /* EnumTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumTabs.swift; sourceTree = "<group>"; };
 		B1562CC42A1A8C3A00EE7CA5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B1562CC62A1A8C5000EE7CA5 /* ResultLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLocationView.swift; sourceTree = "<group>"; };
-		B1562CC82A1A970E00EE7CA5 /* LandmarkAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkAnnotation.swift; sourceTree = "<group>"; };
 		B1562CCA2A1A9A2A00EE7CA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B1562CCB2A1AAD8600EE7CA5 /* PlaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListView.swift; sourceTree = "<group>"; };
 		B1562CCD2A1B21AC00EE7CA5 /* CustomAnnot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnot.swift; sourceTree = "<group>"; };
@@ -94,15 +90,13 @@
 		B1562C6D2A1473CB00EE7CA5 /* Nano2 */ = {
 			isa = PBXGroup;
 			children = (
+				B1562C6E2A1473CB00EE7CA5 /* Nano2App.swift */,
 				B1562CCA2A1A9A2A00EE7CA5 /* Info.plist */,
 				B1562CA02A16837E00EE7CA5 /* Utilities */,
 				B1562C922A16788600EE7CA5 /* Model */,
 				B1562C932A16788B00EE7CA5 /* ViewModel */,
 				B1562C912A16788100EE7CA5 /* View */,
-				B1562C6E2A1473CB00EE7CA5 /* Nano2App.swift */,
 				B1562C722A1473CC00EE7CA5 /* Assets.xcassets */,
-				B1562C772A1473CC00EE7CA5 /* Persistence.swift */,
-				B1562C792A1473CC00EE7CA5 /* Nano2.xcdatamodeld */,
 				B1562C742A1473CC00EE7CA5 /* Preview Content */,
 			);
 			path = Nano2;
@@ -144,8 +138,7 @@
 		B1562C922A16788600EE7CA5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B1562C9C2A1680D300EE7CA5 /* Landmark.swift */,
-				B1562CC82A1A970E00EE7CA5 /* LandmarkAnnotation.swift */,
+				B1562C792A1473CC00EE7CA5 /* Nano2.xcdatamodeld */,
 				B1562CCD2A1B21AC00EE7CA5 /* CustomAnnot.swift */,
 			);
 			path = Model;
@@ -157,6 +150,7 @@
 				B1562C8F2A16787C00EE7CA5 /* MapView.swift */,
 				B1562C9A2A167A6A00EE7CA5 /* LocationManager.swift */,
 				B1562CD12A1C046700EE7CA5 /* LocationViewModel.swift */,
+				B1562C772A1473CC00EE7CA5 /* Persistence.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -244,7 +238,6 @@
 				B1562CDC2A1DF9B700EE7CA5 /* TempView.swift in Sources */,
 				B1562C7B2A1473CC00EE7CA5 /* Nano2.xcdatamodeld in Sources */,
 				B1562C902A16787C00EE7CA5 /* MapView.swift in Sources */,
-				B1562C9D2A1680D300EE7CA5 /* Landmark.swift in Sources */,
 				B1562CCE2A1B21AC00EE7CA5 /* CustomAnnot.swift in Sources */,
 				B1562CCC2A1AAD8600EE7CA5 /* PlaceListView.swift in Sources */,
 				B1FAC0D12A1E5E070011BCFF /* ImagePicker.swift in Sources */,
@@ -259,7 +252,6 @@
 				B1562C6F2A1473CB00EE7CA5 /* Nano2App.swift in Sources */,
 				B1562CD02A1BE7A800EE7CA5 /* ColorExtension.swift in Sources */,
 				B1562C822A1474AE00EE7CA5 /* RootView.swift in Sources */,
-				B1562CC92A1A970E00EE7CA5 /* LandmarkAnnotation.swift in Sources */,
 				B1562CD62A1D30D500EE7CA5 /* CompleteQuest.swift in Sources */,
 				B1562C9B2A167A6A00EE7CA5 /* LocationManager.swift in Sources */,
 				B1562C9F2A16817C00EE7CA5 /* MapQuestView.swift in Sources */,

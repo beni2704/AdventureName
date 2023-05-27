@@ -30,10 +30,10 @@ struct MapView: UIViewRepresentable {
         uiView.showsCompass = true
         
         if let userTrackingButton = uiView.subviews.first(where: { $0 is MKUserTrackingButton }) as? MKUserTrackingButton {
-            userTrackingButton.frame = CGRect(origin: CGPoint(x: 16, y: 16), size: CGSize(width: 30, height: 30))
+            userTrackingButton.frame = CGRect(origin: CGPoint(x: 16, y: 16), size: CGSize(width: 40, height: 40))
         } else {
             let userTrackingButton = MKUserTrackingButton(mapView: uiView)
-            userTrackingButton.frame = CGRect(origin: CGPoint(x: 16, y: 16), size: CGSize(width: 30, height: 30))
+            userTrackingButton.frame = CGRect(origin: CGPoint(x: 16, y: 16), size: CGSize(width: 40, height: 40))
             userTrackingButton.backgroundColor = UIColor.white
             userTrackingButton.layer.cornerRadius = 10
             userTrackingButton.layer.opacity = 0.8
@@ -91,8 +91,9 @@ struct MapView: UIViewRepresentable {
             annotationView?.subtitleVisibility = .visible
             
             if customAnnotation.image != nil {
-//                customAnnotation.setImage(image: customAnnotation.image!)
+                customAnnotation.setImage(image: customAnnotation.image!)
 //                annotationView?.glyphImage = UIImage(data: customAnnotation.image!)
+
                 annotationView?.glyphTintColor = .black
                 annotationView?.markerTintColor = .green
             }
